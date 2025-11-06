@@ -1,0 +1,132 @@
+:root{
+  /* Ocean Professional theme variables + design tokens */
+  --ocean-primary:#2563EB;
+  --ocean-amber:#F59E0B;
+  --ocean-error:#EF4444;
+  --ocean-surface:#ffffff;
+  --ocean-background:#f9fafb;
+  --text-color:#111827;
+
+  /* Screen-specific tokens (from assets/sign-in-11-235.css) */
+  --bg-canvas:#FFFFFF;
+  --text-primary:#111827;
+  --text-secondary:#6B7280;
+  --placeholder:#9CA3AF;
+  --divider:#E5E7EB;
+  --button-bg:#199A77;
+  --button-text:#FFFFFF;
+  --accent:#10B981;
+  --link:#F59E0B;
+  --home-indicator:rgba(0,0,0,0.2);
+}
+
+.login-screen{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:var(--bg-canvas);
+  color:var(--text-primary);
+  font-family:"Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Status bar */
+.login-screen .status-bar{
+  width:375px;
+  max-width:100%;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 16px;
+}
+.login-screen .status-bar .time{font-size:14px;font-weight:600}
+.login-screen .status-bar .status-icons{display:flex;gap:6px}
+.login-screen .status-bar .status-icons span{
+  display:inline-block;background:#000;height:10px;width:16px;border-radius:2px;opacity:.85;
+}
+
+/* Content */
+.login-screen .content{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 0 0;
+}
+
+.login-screen .title-block{
+  width:315px;
+  max-width:calc(100% - 2*30px);
+  margin:0 auto;
+}
+.login-screen .hello{font-size:32px;line-height:45px;font-weight:700;margin:0}
+.login-screen .welcome{margin-top:8px;font-size:20px;line-height:30px;font-weight:600;color:var(--text-primary)}
+
+.login-screen .form{
+  width:315px;
+  max-width:calc(100% - 2*30px);
+  margin-top:28px;
+}
+
+.login-screen .field{margin-bottom:16px}
+.login-screen .field label{
+  display:block;font-size:14px;line-height:21px;font-weight:600;margin-bottom:8px;
+}
+.login-screen .field input{
+  width:100%;height:55px;border:1px solid var(--divider);border-radius:8px;padding:0 20px;
+  font-size:14px;line-height:17px;color:var(--text-primary);background:#fff;outline:none;
+}
+.login-screen .field input::placeholder{color:var(--placeholder)}
+.login-screen .field input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.login-screen .row.forgot{display:flex;justify-content:flex-start;margin-top:12px;margin-bottom:20px}
+.login-screen .link-forgot{color:var(--link);text-decoration:none;font-size:14px;font-weight:500}
+
+.login-screen .btn-primary{
+  width:315px;height:60px;border:none;border-radius:12px;background:var(--button-bg);color:var(--button-text);
+  font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:12px;padding:0 20px;cursor:pointer;
+}
+.login-screen .btn-primary .icon-arrow{width:20px;height:20px}
+.login-screen .btn-primary:hover{filter:brightness(0.95)}
+.login-screen .btn-primary:active{filter:brightness(0.9)}
+.login-screen .btn-primary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.login-screen .divider{
+  display:flex;align-items:center;justify-content:center;gap:12px;margin:24px 0 20px;
+  color:var(--text-secondary);font-size:14px;font-weight:500;
+}
+.login-screen .divider::before,
+.login-screen .divider::after{
+  content:"";display:block;height:1px;width:50px;background:var(--divider);
+}
+
+.login-screen .social-row{display:flex;justify-content:center;gap:25px}
+.login-screen .btn-social{
+  width:44px;height:44px;border-radius:12px;border:1px solid var(--divider);background:#fff;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.login-screen .btn-social img{width:24px;height:24px}
+.login-screen .btn-social:hover{border-color:#D1D5DB}
+.login-screen .btn-social:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.login-screen .cta{text-align:center;margin:28px 0 0;font-size:14px}
+.login-screen .link-signup{color:var(--link);text-decoration:none;font-weight:600}
+
+/* Home indicator */
+.login-screen .home-indicator{
+  width:375px;max-width:100%;margin-top:auto;height:34px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;
+}
+.login-screen .home-indicator .pill{width:135px;height:5px;border-radius:1000px;background:var(--home-indicator)}
+
+/* Responsive */
+@media (max-width: 400px){
+  .login-screen .status-bar{width:100%}
+  .login-screen .form, .login-screen .title-block { max-width: calc(100% - 2*16px); }
+}

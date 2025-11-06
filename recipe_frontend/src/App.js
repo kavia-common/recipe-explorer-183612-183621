@@ -1,47 +1,69 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect, useCallback } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import './App.css';
+import LoginPage from './pages/LoginPage';
+import HomePage from './pages/HomePage';
+
+/**
+ * App sets up theme toggling and routing for /login and / (home).
+ * It renders a floating theme button consistent with the template.
+ */
+
+// PUBLIC_INTERFACE
+function ThemeButton({ theme, onToggle }) {
+  /** Floating theme toggle control shown on all pages. */
+  return (
+    <button
+      className="theme-toggle"
+      onClick={onToggle}
+      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+    >
+      {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+    </button>
+  );
+}
+
+// PUBLIC_INTERFACE
+function RoutedApp({ theme, onToggle }) {
+  /** Inner app with routes to allow useNavigate hook */
+  const navigate = useNavigate();
+
+  // PUBLIC_INTERFACE
+  const handleMockLogin = useCallback((payload) => {
+    // Accept any login and navigate to home
+    // payload: { email, passwordLength }
+    navigate('/', { replace: true });
+  }, [navigate]);
+
+  return (
+    <>
+      <ThemeButton theme={theme} onToggle={onToggle} />
+      <Routes>
+        <Route path="/login" element={<LoginPage onLogin={handleMockLogin} />} />
+        <Route path="/" element={<HomePage />} />
+        {/* Fallback to login for unknown routes */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </>
+  );
+}
 
 // PUBLIC_INTERFACE
 function App() {
   const [theme, setTheme] = useState('light');
 
-  // Effect to apply theme to document element
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
   // PUBLIC_INTERFACE
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
+  const toggleTheme = () => setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
 
   return (
     <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <RoutedApp theme={theme} onToggle={toggleTheme} />
+      </BrowserRouter>
     </div>
   );
 }

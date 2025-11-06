@@ -1,0 +1,182 @@
+:root{
+  --bg-canvas:#FFFFFF;
+  --text-primary:#1A1A1A;
+  --text-secondary:#8A8A8E;
+  --brand-green:#18A363;
+  --brand-green-dark:#0C8B53;
+  --chip-border:#E6E6EB;
+  --card-bg:#F6F7F9;
+  --shadow: 0 10px 20px rgba(16,24,40,.08);
+  --rating-star:#FFC107;
+  --accent-orange-badge:#FFB546;
+  --icon-muted:#9AA3AF;
+  --nav-bg:#FFFFFF;
+  --home-indicator:#111111;
+  --corner-xl:24px;
+  --corner-lg:20px;
+  --corner-md:16px;
+  --corner-sm:12px;
+  --corner-xs:8px;
+  --screen-w:375px;
+  --status-h:44px;
+  --nav-h:120px;
+  --home-indicator-h:34px;
+  --chip-h:31px;
+  --search-h:40px;
+  --avatar:40px;
+  --dish-card-w:150px;
+  --dish-card-h:231px;
+  --dish-base-h:176px;
+  --circle-img:110px;
+  --new-card-h:95px;
+  --new-circle:86px;
+  font-family:"Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+
+.home-screen{
+  position:relative;
+  width:var(--screen-w);
+  min-height:812px;
+  margin:0 auto;
+  background:var(--bg-canvas);
+  overflow:hidden;
+}
+
+/* Status bar */
+.home-screen .status-bar{
+  height:var(--status-h);
+  display:flex;
+  align-items:flex-end;
+  padding:0 16px 8px;
+  font-size:14px;
+  color:#000;
+}
+.home-screen .status-bar .time{font-weight:600}
+.home-screen .status-bar .status-icons{margin-left:auto;display:flex;gap:8px}
+
+/* Header */
+.home-screen .header{display:flex;align-items:center;padding:8px 16px 0 16px}
+.home-screen .greeting{flex:1}
+.home-screen .title{margin:8px 0 2px;font-size:24px;line-height:30px;font-weight:700;color:var(--text-primary)}
+.home-screen .subtitle{font-size:14px;color:var(--text-secondary)}
+.home-screen .avatar{
+  width:var(--avatar);height:var(--avatar);border-radius:12px;overflow:hidden;border:none;background:#F0F3F2;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.home-screen .avatar img{width:100%;height:100%;object-fit:cover}
+
+/* Search row */
+.home-screen .search-row{display:flex;gap:10px;padding:12px 16px 0 16px}
+.home-screen .search{
+  position:relative;flex:1;height:var(--search-h);border-radius:12px;background:#F5F6F8;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.04);display:flex;align-items:center;padding-left:40px;
+}
+.home-screen .search-icon{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  width:18px;height:18px;display:flex;align-items:center;justify-content:center;
+}
+.home-screen .search input{
+  width:100%;height:100%;border:none;outline:none;background:transparent;font-size:14px;color:var(--text-primary);
+}
+.home-screen .filter{
+  width:40px;height:40px;border:none;border-radius:12px;background:var(--brand-green);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(24,163,99,.35);
+}
+.home-screen .filter img{width:20px;height:20px;filter:brightness(0) invert(1)}
+
+/* Chips */
+.home-screen .chips-scroll{padding:12px 16px 8px;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity}
+.home-screen .chips-scroll::-webkit-scrollbar{display:none}
+.home-screen .chip{
+  height:var(--chip-h);padding:0 14px;border-radius:16px;border:1px solid var(--chip-border);background:#fff;
+  color:#3C3C43;font-size:13px;font-weight:600;white-space:nowrap;
+}
+.home-screen .chip--active{background:var(--brand-green);color:#fff;border-color:var(--brand-green)}
+
+/* Dishes */
+.home-screen .dishes{padding:6px 0 0 0}
+.home-screen .dishes .cards-scroll{padding:0 16px;display:flex;gap:12px;overflow-x:auto}
+.home-screen .dishes .cards-scroll::-webkit-scrollbar{display:none}
+.home-screen .dish-card{position:relative;width:var(--dish-card-w);height:var(--dish-card-h);flex:0 0 var(--dish-card-w)}
+.home-screen .dish-top-img{
+  position:absolute;top:0;left:50%;transform:translate(-50%,0);
+  width:var(--circle-img);height:var(--circle-img);border-radius:999px;display:flex;align-items:center;justify-content:center;
+}
+.home-screen .dish-top-img .circle-img{width:100%;height:100%;object-fit:cover;border-radius:999px}
+.home-screen .dish-base{
+  position:absolute;left:0;right:0;bottom:0;height:var(--dish-base-h);border-radius:20px;background:var(--card-bg);
+  box-shadow:var(--shadow);padding:70px 12px 12px;
+}
+.home-screen .dish-main{
+  position:absolute;left:0;right:0;bottom:0;width:100%;height:var(--dish-base-h);object-fit:cover;border-radius:20px;opacity:0;pointer-events:none;
+}
+.home-screen .bookmark{position:absolute;right:10px;top:10px;width:24px;height:24px}
+.home-screen .bookmark-bg{position:absolute;inset:0;width:100%;height:100%}
+.home-screen .bookmark-icon{position:absolute;left:4px;top:4px;width:16px;height:16px}
+.home-screen .dish-title{margin:0 0 8px 0;font-size:14px;line-height:21px;font-weight:600;color:var(--text-primary);height:42px;overflow:hidden}
+.home-screen .meta{display:flex;justify-content:space-between;align-items:center;color:var(--text-secondary);font-size:12px;margin-bottom:8px}
+.home-screen .meta-key{opacity:.9}
+.home-screen .meta-value{font-weight:600;color:#6B7280}
+.home-screen .rating{width:45px;height:23px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.home-screen .rating .star{width:10px;height:10px}
+.home-screen .star-inline{width:10px;height:10px;display:inline-block;border-radius:2px;background:var(--rating-star)}
+
+/* Sections */
+.home-screen .section-title{padding:12px 16px 6px;margin:0;font-size:16px;font-weight:700;color:var(--text-primary)}
+.home-screen .new-recipes .cards-scroll{display:flex;gap:16px;overflow-x:auto;padding:0 16px 12px}
+.home-screen .new-recipes .cards-scroll::-webkit-scrollbar{display:none}
+.home-screen .new-card{position:relative;flex:0 0 251px;height:127px}
+.home-screen .new-base{
+  position:absolute;left:0;bottom:0;width:251px;height:95px;border-radius:20px;background:#fff;box-shadow:var(--shadow);
+  padding:10px 96px 10px 10px;
+}
+.home-screen .new-title{margin:0 0 4px;font-size:13px;line-height:18px;font-weight:600;color:var(--text-primary);height:23px;overflow:hidden}
+.home-screen .new-rating{display:flex;gap:4px;height:12px;margin-bottom:6px}
+.home-screen .star.s{width:12px;height:12px;background:var(--rating-star);border-radius:3px;display:inline-block}
+.home-screen .creator{display:flex;align-items:center;gap:8px;height:25px;margin-bottom:4px}
+.home-screen .creator-avatar{width:25px;height:25px;border-radius:50%;object-fit:cover;background:#EEE}
+.home-screen .creator-name{font-size:14px;color:var(--text-secondary)}
+.home-screen .time{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--text-secondary)}
+.home-screen .timer{width:17px;height:17px}
+
+.home-screen .new-circle{
+  position:absolute;right:0;top:0;width:86px;height:86px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;background:#F0F3F2;
+}
+.home-screen .new-circle img{width:100%;height:100%;object-fit:cover}
+
+/* Bottom Nav */
+.home-screen .nav-bar{
+  position:fixed;left:50%;transform:translateX(-50%);
+  bottom:34px;width:var(--screen-w);height:106px;
+  pointer-events:auto;
+}
+.home-screen .nav-bg{
+  position:absolute;inset:0;background:var(--nav-bg);border-top-left-radius:24px;border-top-right-radius:24px;box-shadow:0 -10px 20px rgba(16,24,40,.06);
+}
+.home-screen .nav-item{position:absolute;bottom:28px;width:24px;height:24px;border:none;background:transparent}
+.home-screen .nav-item img{width:24px;height:24px}
+.home-screen .nav-item:nth-of-type(1){left:40px}
+.home-screen .nav-item:nth-of-type(2){left:110px}
+.home-screen .nav-item:nth-of-type(3){left:260px}
+.home-screen .nav-item:nth-of-type(4){right:110px}
+.home-screen .nav-item:nth-of-type(5){right:40px}
+.home-screen .nav-menu{position:absolute;left:50%;transform:translateX(-50%);bottom:48px;width:48px;height:48px;border:none;background:transparent}
+.home-screen .nav-menu-bg{position:absolute;inset:0;width:48px;height:48px}
+.home-screen .nav-plus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:21px;height:21px}
+
+/* Home Indicator */
+.home-screen .home-indicator{
+  position:fixed;left:50%;transform:translateX(-50%);
+  bottom:8px;width:135px;height:5px;background:var(--home-indicator);border-radius:3px;opacity:.8;
+}
+
+/* Helpers */
+.home-screen button{cursor:pointer}
+
+/* Responsive center at >375px already handled by fixed width; for very small screens allow full width */
+@media (max-width: 380px){
+  .home-screen{width:100%}
+  .home-screen .nav-bar{width:100%}
+}
