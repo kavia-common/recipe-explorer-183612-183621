@@ -70,7 +70,7 @@ export default function LoginPage({ onLogin }) {
 
           <button type="submit" className="btn-primary">
             <span>Sign In</span>
-            <img className="icon-arrow" src="/assets/figmaimages/figma_image_54_668_53_625.svg" alt="" aria-hidden="true" />
+            <img className="icon-arrow" src="/figmaimages/figma_image_54_668_53_625.svg" alt="" aria-hidden="true" />
           </button>
 
           <div className="divider">
@@ -79,10 +79,10 @@ export default function LoginPage({ onLogin }) {
 
           <div className="social-row" role="group" aria-label="Sign in with">
             <button type="button" className="btn-social" aria-label="Sign in with Google" onClick={(e)=>e.preventDefault()}>
-              <img src="/assets/figmaimages/figma_image_13_48.svg" alt="Google" />
+              <img src="/figmaimages/figma_image_13_48.svg" alt="Google" />
             </button>
             <button type="button" className="btn-social" aria-label="Sign in with Facebook" onClick={(e)=>e.preventDefault()}>
-              <img src="/assets/figmaimages/figma_image_13_58.svg" alt="Facebook" />
+              <img src="/figmaimages/figma_image_13_58.svg" alt="Facebook" />
             </button>
           </div>
 

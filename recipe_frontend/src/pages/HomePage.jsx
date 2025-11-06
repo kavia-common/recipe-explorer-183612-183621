@@ -24,7 +24,7 @@ export default function HomePage() {
         </div>
         <button className="avatar" aria-label="Profile">
           {/* Placeholder circle avatar (exact asset in HTML used an svg placeholder path; here keep container look) */}
-          <img src="/assets/figmaimages/figma_image_30_781.png" alt="Profile avatar" />
+          <img src="/figmaimages/figma_image_30_781.png" alt="Profile avatar" />
         </button>
       </header>
 
@@ -32,12 +32,12 @@ export default function HomePage() {
       <div className="search-row">
         <div className="search">
           <span className="search-icon">
-            <img src="/assets/figmaimages/figma_image_103_3515.png" alt="" />
+            <img src="/figmaimages/figma_image_103_3515.png" alt="" />
           </span>
           <input type="text" placeholder="Search recipe" />
         </div>
         <button className="filter" aria-label="Filter">
-          <img src="/assets/figmaimages/figma_image_103_3533.png" alt="Filter" />
+          <img src="/figmaimages/figma_image_103_3533.png" alt="Filter" />
         </button>
       </div>
 
@@ -61,12 +61,12 @@ export default function HomePage() {
           {/* Card 1 */}
           <article className="dish-card">
             <div className="dish-top-img">
-              <img className="circle-img" src="/assets/figmaimages/figma_image_18_436.png" alt="Classic Greek Salad circle image" />
+              <img className="circle-img" src="/figmaimages/figma_image_18_436.png" alt="Classic Greek Salad circle image" />
             </div>
             <div className="dish-base">
               <div className="bookmark" aria-hidden="true">
-                <img className="bookmark-bg" src="/assets/figmaimages/figma_image_100_2922.png" alt="" />
-                <img className="bookmark-icon" src="/assets/figmaimages/figma_image_100_2891.png" alt="Save" />
+                <img className="bookmark-bg" src="/figmaimages/figma_image_100_2922.png" alt="" />
+                <img className="bookmark-icon" src="/figmaimages/figma_image_100_2891.png" alt="Save" />
               </div>
               <h3 className="dish-title">Classic Greek Salad</h3>
               <div className="meta">
@@ -74,17 +74,17 @@ export default function HomePage() {
                 <div className="meta-value">15 Mins</div>
               </div>
               <div className="rating" aria-label="rating 4.5">
-                <img className="star" src="/assets/figmaimages/figma_image_100_2539.png" alt="" />
+                <img className="star" src="/figmaimages/figma_image_100_2539.png" alt="" />
                 <span className="rating-text">4.5</span>
               </div>
             </div>
-            <img className="dish-main" src="/assets/figmaimages/figma_image_18_424.png" alt="Classic Greek Salad photo" />
+            <img className="dish-main" src="/figmaimages/figma_image_18_424.png" alt="Classic Greek Salad photo" />
           </article>
 
           {/* Card 2 */}
           <article className="dish-card">
             <div className="dish-top-img">
-              <img className="circle-img" src="/assets/figmaimages/figma_image_18_494.png" alt="Crunchy Nut Coleslaw circle" />
+              <img className="circle-img" src="/figmaimages/figma_image_18_494.png" alt="Crunchy Nut Coleslaw circle" />
             </div>
             <div className="dish-base">
               <div className="bookmark" aria-hidden="true">
@@ -106,7 +106,7 @@ export default function HomePage() {
           {/* Card 3 */}
           <article className="dish-card">
             <div className="dish-top-img">
-              <img className="circle-img" src="/assets/figmaimages/figma_image_20_574.png" alt="Shrimp Chicken Andouille Sausage Jambalaya circle" />
+              <img className="circle-img" src="/figmaimages/figma_image_20_574.png" alt="Shrimp Chicken Andouille Sausage Jambalaya circle" />
             </div>
             <div className="dish-base">
               <div className="bookmark" aria-hidden="true">
@@ -128,7 +128,7 @@ export default function HomePage() {
           {/* Card 4 */}
           <article className="dish-card">
             <div className="dish-top-img">
-              <img className="circle-img" src="/assets/figmaimages/figma_image_22_221.png" alt="Barbecue Chicken Jollof Rice circle" />
+              <img className="circle-img" src="/figmaimages/figma_image_22_221.png" alt="Barbecue Chicken Jollof Rice circle" />
             </div>
             <div className="dish-base">
               <div className="bookmark" aria-hidden="true">
@@ -150,7 +150,7 @@ export default function HomePage() {
           {/* Card 5 */}
           <article className="dish-card">
             <div className="dish-top-img">
-              <img className="circle-img" src="/assets/figmaimages/figma_image_22_256.png" alt="Portuguese Piri Piri Chicken circle" />
+              <img className="circle-img" src="/figmaimages/figma_image_22_256.png" alt="Portuguese Piri Piri Chicken circle" />
             </div>
             <div className="dish-base">
               <div className="bookmark" aria-hidden="true">
@@ -182,16 +182,16 @@ export default function HomePage() {
                 <span className="star s"></span><span className="star s"></span><span className="star s"></span><span className="star s"></span><span className="star s"></span>
               </div>
               <div className="creator">
-                <img className="creator-avatar" src="/assets/figmaimages/figma_image_30_848.png" alt="By James Milner" />
+                <img className="creator-avatar" src="/figmaimages/figma_image_30_848.png" alt="By James Milner" />
                 <span className="creator-name">By James Milner</span>
               </div>
               <div className="time">
-                <img className="timer" src="/assets/figmaimages/figma_image_103_3270.png" alt="" />
+                <img className="timer" src="/figmaimages/figma_image_103_3270.png" alt="" />
                 <span>20 mins</span>
               </div>
             </div>
             <div className="new-circle">
-              <img src="/assets/figmaimages/figma_image_30_841.png" alt="Steak image" />
+              <img src="/figmaimages/figma_image_30_841.png" alt="Steak image" />
             </div>
           </article>
 
@@ -211,7 +211,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="new-circle">
-              <img src="/assets/figmaimages/figma_image_30_811.png" alt="Pilaf image" />
+              <img src="/figmaimages/figma_image_30_811.png" alt="Pilaf image" />
             </div>
           </article>
 
@@ -231,7 +231,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="new-circle">
-              <img src="/assets/figmaimages/figma_image_22_276.png" alt="Rice Pilaf image" />
+              <img src="/figmaimages/figma_image_22_276.png" alt="Rice Pilaf image" />
             </div>
           </article>
 
@@ -251,7 +251,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="new-circle">
-              <img src="/assets/figmaimages/figma_image_30_750.png" alt="Stir-fry chicken image" />
+              <img src="/figmaimages/figma_image_30_750.png" alt="Stir-fry chicken image" />
             </div>
           </article>
         </div>
@@ -261,20 +261,20 @@ export default function HomePage() {
       <nav className="nav-bar" aria-label="Bottom Navigation">
         <div className="nav-bg"></div>
         <button className="nav-item active" aria-label="Home">
-          <img src="/assets/figmaimages/figma_image_103_4015.png" alt="Home" />
+          <img src="/figmaimages/figma_image_103_4015.png" alt="Home" />
         </button>
         <button className="nav-item" aria-label="Bookmarks">
-          <img src="/assets/figmaimages/figma_image_103_4061.png" alt="Bookmarks" />
+          <img src="/figmaimages/figma_image_103_4061.png" alt="Bookmarks" />
         </button>
         <button className="nav-menu" aria-label="Add">
-          <img className="nav-menu-bg" src="/assets/figmaimages/figma_image_103_4043.png" alt="" />
-          <img className="nav-plus" src="/assets/figmaimages/figma_image_103_4323.png" alt="Add" />
+          <img className="nav-menu-bg" src="/figmaimages/figma_image_103_4043.png" alt="" />
+          <img className="nav-plus" src="/figmaimages/figma_image_103_4323.png" alt="Add" />
         </button>
         <button className="nav-item" aria-label="Notifications">
-          <img src="/assets/figmaimages/figma_image_103_3787.png" alt="Notifications" />
+          <img src="/figmaimages/figma_image_103_3787.png" alt="Notifications" />
         </button>
         <button className="nav-item" aria-label="Profile">
-          <img src="/assets/figmaimages/figma_image_103_3805.png" alt="Profile" />
+          <img src="/figmaimages/figma_image_103_3805.png" alt="Profile" />
         </button>
       </nav>
 
